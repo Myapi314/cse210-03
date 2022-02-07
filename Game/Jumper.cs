@@ -5,9 +5,10 @@ using System.Collections.Generic;
 namespace Unit03.Game 
 {
     /// <summary>
-    /// <para>The person hiding from the Seeker.</para>
+    /// <para> </para>
     /// <para>
-    /// The responsibility of Hider is to keep track of its location and distance from the seeker.
+    /// The responsibility of Jumper is to keep track of its 
+    /// lives and the parts of the key word guessed correctly.
     /// </para>
     /// </summary>
     public class Jumper

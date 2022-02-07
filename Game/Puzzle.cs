@@ -4,9 +4,11 @@ using System;
 namespace Unit03.Game
 {
     /// <summary>
-    /// <para>The person looking for the Hider.</para>
+    /// <para></para>
     /// <para>
-    /// The responsibility of a Seeker is to keep track of its location.
+    /// The responsibility of a Puzzle is to
+    /// keep track of the key word and the letters 
+    /// being guessed.
     /// </para>
     /// </summary>
     public class Puzzle

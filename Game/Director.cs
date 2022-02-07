@@ -21,7 +21,7 @@ namespace Unit03.Game
         }
 
         /// <summary>
-        /// Starts the game by running the main game loop.
+        /// Function Doc String
         /// </summary>
         public void StartGame()
         {
@@ -34,7 +34,7 @@ namespace Unit03.Game
         }
 
         /// <summary>
-        /// Moves the seeker to a new location.
+        /// Function Doc String
         /// </summary>
         private void GetInputs()
         {
@@ -42,7 +42,7 @@ namespace Unit03.Game
         }
 
         /// <summary>
-        /// Keeps watch on where the seeker is moving.
+        /// Function Doc String
         /// </summary>
         private void DoUpdates()
         {
