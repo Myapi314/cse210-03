@@ -30,11 +30,11 @@ namespace Unit03.Game
         public void Display(string text){
            string top = "_____";
            string tside ="/____\\";
-           string btside ="\    /";
-           string bbside ="\   /";
+           string btside ="\\    /";
+           string bbside ="\\   /";
            string head =" 0 ";
            string torso ="/|\\";
-           string legs ="/ \\"
+           string legs ="/ \\";
 
            
         }
