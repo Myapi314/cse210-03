@@ -20,17 +20,6 @@ namespace Unit03.Game
         }
 
         /// <summary>
-        /// Gets numerical input from the terminal. Directs the user with the given prompt.
-        /// </summary>
-        /// <param name="prompt">The given prompt.</param>
-        /// <returns>Inputted number.</returns>
-        public int ReadNumber(string prompt)
-        {
-            string rawValue = ReadText(prompt);
-            return int.Parse(rawValue, System.Globalization.CultureInfo.InvariantCulture);
-        }
-
-        /// <summary>
         /// Gets text input from the terminal. Directs the user with the given prompt.
         /// </summary>
         /// <param name="prompt">The given prompt.</param>
@@ -48,6 +37,16 @@ namespace Unit03.Game
         public void WriteText(string text)
         {
             Console.WriteLine(text);
+        }
+
+        public void WriteList (List<string> letters)
+        {
+            int len = letters.Count;
+            for (int i = 0; i < len; i++)
+            {
+                Console.Write($"{letters[i]} ");
+            }
+            Console.WriteLine("");
         }
     }
 }
