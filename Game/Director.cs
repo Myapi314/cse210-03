@@ -13,6 +13,10 @@ namespace Unit03.Game
         private Puzzle puzzle = new Puzzle();
         private TerminalService terminalService = new TerminalService();
 
+        private string currLetter = "";
+        private bool isLetter = false;
+        private int lives = 8;
+
         /// <summary>
         /// Constructs a new instance of Director.
         /// </summary>
@@ -25,11 +29,11 @@ namespace Unit03.Game
         /// </summary>
         public void StartGame()
         {
-            while (isPlaying)
+            while (isPlaying && lives > 0)
             {
+                DoOutputs();
                 GetInputs();
                 DoUpdates();
-                DoOutputs();
             }
         }
 
@@ -38,7 +42,7 @@ namespace Unit03.Game
         /// </summary>
         private void GetInputs()
         {
-            terminalService.ReadChar("Guess a leter [a-z]: ");
+            currLetter = terminalService.ReadText("Guess a leter [a-z]: ");
         }
 
         /// <summary>
@@ -46,7 +50,11 @@ namespace Unit03.Game
         /// </summary>
         private void DoUpdates()
         {
-
+            isLetter = puzzle.CompareLetter(currLetter);
+            if (!isLetter)
+            {
+                lives -= 1;
+            }
         }
 
         /// <summary>
@@ -54,7 +62,8 @@ namespace Unit03.Game
         /// </summary>
         private void DoOutputs()
         {
-            
+            terminalService.WriteList(puzzle.GetGuessedLetters());
+            Console.WriteLine(lives);
         }
     }
 }

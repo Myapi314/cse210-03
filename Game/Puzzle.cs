@@ -7,17 +7,18 @@ namespace Unit03.Game
     /// <para></para>
     /// <para>
     /// The responsibility of a Puzzle is to
-    /// keep track of the key word and the letters 
-    /// being guessed.
+    /// keep track of the key word and if the letters 
+    /// being guessed are a part of the keyWord.
     /// </para>
     /// </summary>
     public class Puzzle
     {
-        private string[] wordList = {"milk", "ice", "catastrophe", "orange", "fruit", "animal", "xylophone"};
+        private List<string> wordList = new List<string>{"milk", "ice", "catastrophe", "orange", "fruit", "animal", "xylophone"};
         private string keyWord = "";
         private int iKeyWord = 0;
         private int lenKey = 0;
         private List<string> guessedLetters = new List<string>();
+        private List<string> correctLetters = new List<string>();
         /// <summary>
         /// Constructs a new instance of Puzzle.
         /// </summary> 
@@ -25,28 +26,37 @@ namespace Unit03.Game
         {
             // Generate the key word here
             Random rand = new Random();
-            iKeyWord = random.Next(wordList.Count);
-            keyWord = wordList[index];
+            iKeyWord = rand.Next(wordList.Count);
+            keyWord = wordList[iKeyWord];
             lenKey = keyWord.Length;
-            guessedLetters = Enumerable.Repeat("_", len).ToList();
+
+            // Generate the guessLetters 
+            guessedLetters = Enumerable.Repeat("_", lenKey).ToList();
+            // Generate list of strings with correct letters.
+            for (int i = 0; i < lenKey; i++)
+            {
+                string currLetter = keyWord[i].ToString();
+                correctLetters.Add(currLetter);
+            }
         }
 
         /// <summary>
         /// Description here.
         /// </summary>
         /// <returns>  .</returns>
-        public void CompareLetter(string letter)
+        public bool CompareLetter(string letter)
         {
-            int len = keyWord.Length;
-            for (int i = 0; i < len; i++)
+            bool isLetter = false;
+            for (int i = 0; i < lenKey; i++)
             {
-                string currLetter = keyWord[i].ToString();
-                if (letter == currLetter)
+                if (letter == correctLetters[i])
                 {
+                    isLetter = true;
                     guessedLetters[i] = letter;
                 }
                     }
-            }
+            return isLetter;
+        }
 
         /// <summary>
         /// Returns the list of guessedLetters.
@@ -55,5 +65,6 @@ namespace Unit03.Game
         {
             return guessedLetters;
         }
+
     }
 }
