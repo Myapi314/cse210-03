@@ -38,7 +38,7 @@ namespace Unit03.Game
         /// </summary>
         private void GetInputs()
         {
-
+            terminalService.ReadChar("Guess a leter [a-z]: ");
         }
 
         /// <summary>
