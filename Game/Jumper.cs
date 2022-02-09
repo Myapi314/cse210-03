@@ -25,6 +25,21 @@ namespace Unit03.Game
         /// <summary>
         /// Function Doc String
         /// </summary>
+        
+        ///dispaly board
+        public void Display(string text){
+           string top = "_____";
+           string tside ="/____\\";
+           string btside ="\    /";
+           string bbside ="\   /";
+           string head =" 0 ";
+           string torso ="/|\\";
+           string legs ="/ \\"
+
+           
+        }
+
+
 
 
     }
