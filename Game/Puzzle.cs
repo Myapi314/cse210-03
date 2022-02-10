@@ -66,5 +66,20 @@ namespace Unit03.Game
             return guessedLetters;
         }
 
+        public bool CompareProgress()
+        {
+            bool areLettersSame = true;
+            int i = 0;
+            while (areLettersSame && i < lenKey)
+            {
+                if (guessedLetters[i] == "_")
+                {
+                    areLettersSame = false;
+                }
+                i++;
+            }
+            return areLettersSame;
+        }
+
     }
 }

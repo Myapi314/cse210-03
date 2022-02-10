@@ -9,7 +9,7 @@ namespace Unit03.Game
     public class Director
     {
         private Jumper jumper = new Jumper();
-        private bool isPlaying = true;
+        private bool wordFound = false;
         private Puzzle puzzle = new Puzzle();
         private TerminalService terminalService = new TerminalService();
 
@@ -29,12 +29,13 @@ namespace Unit03.Game
         /// </summary>
         public void StartGame()
         {
-            while (isPlaying && lives > 0)
+            while (!wordFound && lives > 0)
             {
                 DoOutputs();
                 GetInputs();
                 DoUpdates();
             }
+            endOfGame();
         }
 
         /// <summary>
@@ -55,6 +56,7 @@ namespace Unit03.Game
             {
                 lives -= 1;
             }
+            wordFound = puzzle.CompareProgress();
         }
 
         /// <summary>
@@ -64,6 +66,11 @@ namespace Unit03.Game
         {
             terminalService.WriteList(puzzle.GetGuessedLetters());
             Console.WriteLine(lives);
+        }
+
+        private void endOfGame()
+        {
+            terminalService.WriteList(puzzle.GetGuessedLetters());
         }
     }
 }
