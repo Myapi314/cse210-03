@@ -25,7 +25,7 @@ namespace Unit03.Game
         }
 
         /// <summary>
-        /// Function Doc String
+        /// Starts the game by running the main game loop.
         /// </summary>
         public void StartGame()
         {
@@ -35,19 +35,32 @@ namespace Unit03.Game
                 GetInputs();
                 DoUpdates();
             }
-            endOfGame();
+
+            // Display the end of game messages. 
+            DoOutputs();
+            if (wordFound)
+            {
+                terminalService.WriteText("Great job! You found the word!");
+            }
+            else if (lives == 0)
+            {
+                terminalService.WriteText("You didn't find the word :(");
+                terminalService.WriteText("Next time look before you JUMP.\n");
+            }
+            
         }
 
         /// <summary>
-        /// Function Doc String
+        /// Gets the letter guess from the player.
         /// </summary>
         private void GetInputs()
         {
             currLetter = terminalService.ReadText("Guess a leter [a-z]: ");
+            terminalService.WriteText(" ");
         }
 
         /// <summary>
-        /// Function Doc String
+        /// Compares the guess and checks to see if the word has been found
         /// </summary>
         private void DoUpdates()
         {
@@ -60,15 +73,9 @@ namespace Unit03.Game
         }
 
         /// <summary>
-        /// Provides a hint for the seeker to use.
+        /// Displays the letters guessed and the the state of the parachute.
         /// </summary>
         private void DoOutputs()
-        {
-            terminalService.WriteList(puzzle.GetGuessedLetters());
-            terminalService.WriteList(jumper.BuildParachute(lives));
-        }
-
-        private void endOfGame()
         {
             terminalService.WriteList(puzzle.GetGuessedLetters());
             terminalService.WriteList(jumper.BuildParachute(lives));

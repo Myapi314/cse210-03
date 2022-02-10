@@ -7,8 +7,8 @@ namespace Unit03.Game
     /// <summary>
     /// <para> </para>
     /// <para>
-    /// The responsibility of Jumper is to keep track of its 
-    /// lives and the parts of the key word guessed correctly.
+    /// The responsibility of Jumper is to keep track of
+    /// the changes in the parachute.
     /// </para>
     /// </summary>
     public class Jumper
@@ -23,10 +23,10 @@ namespace Unit03.Game
         }
 
         /// <summary>
-        /// Function Doc String
+        /// Creates the parachute.
         /// </summary>
-        
-        ///dispaly board
+        /// <param name="lives">The number of lives not exceeding 8.</param>
+        /// <returns>List containing parts of parachute remaining.</returns>
         public List<string> BuildParachute(int lives){
             string top = "    ___\n";
             string tside ="  /___\\\n";
