@@ -27,16 +27,20 @@ namespace Unit03.Game
         /// </summary>
         
         ///dispaly board
-        public void Display(string text){
-           string top = "_____";
-           string tside ="/____\\";
-           string btside ="\\    /";
-           string bbside ="\\   /";
-           string head =" 0 ";
-           string torso ="/|\\";
-           string legs ="/ \\";
+        public List<string> BuildParachute(int lives){
+            string top = "    ___\n";
+            string tside ="  /___\\\n";
+            string btside ="  \\   /\n";
+            string bbside ="   \\ /\n";
+            string head ="    O \n";
+            string torso ="   /|\\\n";
+            string legs ="   / \\\n"; 
+            string air = " \n";
+            string ground = "^^^^^^^^^^^";
 
-           
+            List<string> parachute = new List<string>{top, tside, btside, bbside, head, torso, legs, air, ground};
+            return parachute;
+
         }
 
 

@@ -65,12 +65,13 @@ namespace Unit03.Game
         private void DoOutputs()
         {
             terminalService.WriteList(puzzle.GetGuessedLetters());
-            Console.WriteLine(lives);
+            terminalService.WriteList(jumper.BuildParachute(lives));
         }
 
         private void endOfGame()
         {
             terminalService.WriteList(puzzle.GetGuessedLetters());
+            terminalService.WriteList(jumper.BuildParachute(lives));
         }
     }
 }
