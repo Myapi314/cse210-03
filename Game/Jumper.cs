@@ -38,83 +38,60 @@ namespace Unit03.Game
             string air = " \n";
             string ground = "^^^^^^^^^^^";
             switch(lives){
-                case 7: top = "";
+                case 7: 
+                top = "\n";
+                break;
+                
+                case 6: 
+                top = "\n";
+                tside ="   ___\\\n";
+                break;
+
+                case 5: 
+                top = "\n";
+                tside ="   ___\n";
+                break;
+
+                case 4:
+                top = "\n";
+                tside ="\n";
+                break;
+
+                case 3: 
+                top = "\n";
+                tside ="\n";
+                btside ="  \\\n";
+                break;
+
+                case 2: 
+                top = "\n";
+                tside ="\n";
+                btside ="\n";
+                break;
+
+                case 1: 
+                top = "\n";
+                tside ="\n";
+                btside ="\n";
+                bbside ="     /\n";
+                break; 
+
+                case 0: 
+                top = "\n";
+                tside = "\n";
+                btside = "\n";
+                bbside = "\n";
+                head ="    X \n";
+                break;
+
+                default:
+                top = "    ___\n";
                 tside ="  /___\\\n";
                 btside ="  \\   /\n";
                 bbside ="   \\ /\n";
                 head ="    O \n";
                 torso ="   /|\\\n";
-                legs ="   / \\\n";
-                air = " \n";
-                ground = "^^^^^^^^^^^";
-                break;
-                case 6: top = "";
-                tside ="  ___\\\n";
-                btside ="  \\   /\n";
-                bbside ="   \\ /\n";
-                head ="    O \n";
-                torso ="   /|\\\n";
-                legs ="   / \\\n";
-                air = " \n";
-                ground = "^^^^^^^^^^^";
-                break;
-                case 5: top = "";
-                tside ="  ___";
-                btside ="  \\   /\n";
-                bbside ="   \\ /\n";
-                head ="    O \n";
-                torso ="   /|\\\n";
-                legs ="   / \\\n";
-                air = " \n";
-                ground = "^^^^^^^^^^^";
-                break;
-                case 4: top = "";
-                tside ="";
-                btside ="  \\   /\n";
-                bbside ="   \\ /\n";
-                head ="    O \n";
-                torso ="   /|\\\n";
-                legs ="   / \\\n";
-                air = " \n";
-                ground = "^^^^^^^^^^^";
-                break;
-                case 3: top = "";
-                tside ="";
-                btside ="   /\n";
-                bbside ="   \\ /\n";
-                head ="    O \n";
-                torso ="   /|\\\n";
-                legs ="   / \\\n";
-                air = " \n";
-                ground = "^^^^^^^^^^^";
-                break;
-                case 2: top = "";
-                tside ="";
-                btside ="     ";
-                bbside =" \\ /\n";
-                head ="    O \n";
-                torso ="   /|\\\n";
-                legs ="   / \\\n";
-                air = " \n";
-                ground = "^^^^^^^^^^^";
-                break;
-                case 1: top = "";
-                tside ="";
-                btside ="     ";
-                bbside ="    /\n";
-                head ="    O \n";
-                torso ="   /|\\\n";
-                legs ="   / \\\n";
-                air = " \n";
-                ground = "^^^^^^^^^^^";
-                break;
-                case 0: top = "";
-                tside ="";
-                btside ="     ";
-                bbside ="    ";
-                head ="    X \n";
-                 torso ="   /|\\\n";
-                legs ="   / \\\n";
+                legs ="   / \\\n"; 
                 air = " \n";
                 ground = "^^^^^^^^^^^";
                 break;
