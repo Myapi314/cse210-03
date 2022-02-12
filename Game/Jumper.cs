@@ -20,8 +20,8 @@ namespace Unit03.Game
         /// </summary>
         public Jumper()
         {
-        }
-
+        } 
+         int lives = Director.lives;
         /// <summary>
         /// Creates the parachute.
         /// </summary>
@@ -37,11 +37,45 @@ namespace Unit03.Game
             string legs ="   / \\\n"; 
             string air = " \n";
             string ground = "^^^^^^^^^^^";
+            switch(lives){
+                case 7: top = "";
+                break;
+                case 6: top = "";
+                tside ="  ___\\\n";
+                break;
+                case 5: top = "";
+                tside ="  ___";
+                break;
+                case 4: top = "";
+                tside ="";
+                break;
+                case 3: top = "";
+                tside ="";
+                btside ="     /\n";
+                break;
+                case 2: top = "";
+                tside ="";
+                btside ="     ";
+                break;
+                case 1: top = "";
+                tside ="";
+                btside ="     ";
+                bbside ="    /\n";
+                break;
+                case 0: top = "";
+                tside ="";
+                btside ="     ";
+                bbside ="    ";
+                head ="    X \n";
+                break;
+            }
 
             List<string> parachute = new List<string>{top, tside, btside, bbside, head, torso, legs, air, ground};
             return parachute;
 
+
         }
+        
 
 
 
