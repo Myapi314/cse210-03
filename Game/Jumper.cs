@@ -13,6 +13,15 @@ namespace Unit03.Game
     /// </summary>
     public class Jumper
     {
+            private string top = "    ___\n";
+            private string tside ="  /___\\\n";
+            private string btside ="  \\   /\n";
+            private string bbside ="   \\ /\n";
+            private string head ="    O \n";
+            private string torso ="   /|\\\n";
+            private string legs ="   / \\\n"; 
+            private string air = " \n";
+            private string ground = "^^^^^^^^^^^";
        
 
         /// <summary>
@@ -21,27 +30,17 @@ namespace Unit03.Game
         public Jumper()
         {
         } 
-         int lives = Director.lives;
         /// <summary>
         /// Creates the parachute.
         /// </summary>
         /// <param name="lives">The number of lives not exceeding 8.</param>
         /// <returns>List containing parts of parachute remaining.</returns>
         public List<string> BuildParachute(int lives){
-            string top = "    ___\n";
-            string tside ="  /___\\\n";
-            string btside ="  \\   /\n";
-            string bbside ="   \\ /\n";
-            string head ="    O \n";
-            string torso ="   /|\\\n";
-            string legs ="   / \\\n"; 
-            string air = " \n";
-            string ground = "^^^^^^^^^^^";
             switch(lives){
                 case 7: 
                 top = "\n";
                 break;
-                
+
                 case 6: 
                 top = "\n";
                 tside ="   ___\\\n";

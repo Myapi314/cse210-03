@@ -15,7 +15,7 @@ namespace Unit03.Game
 
         private string currLetter = "";
         private bool isLetter = false;
-        public static int lives = 8;
+        private static int lives = 8;
 
         /// <summary>
         /// Constructs a new instance of Director.
